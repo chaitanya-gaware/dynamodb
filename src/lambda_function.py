@@ -4,7 +4,7 @@ import pandas as pd
 import boto3
 from datetime import datetime as dt
 
-# table_name = "critical_process"
+
 
 # define table names -- 1
 list_table = ["critical_process", "non_critical_process"]
@@ -23,8 +23,9 @@ dynamodb = boto3.client('dynamodb', region_name='us-east-1')
 #     return list_table
 
 # function to get the the entries in the dynamodb table 
-# def add_entries_dynamodb():
 
+# def add_entries_dynamodb():
+#     table_name = "critical_process"
     
 #     data = [
 #         {
@@ -83,26 +84,25 @@ def get_entries(table_name):
         return None
     
  #function to convert the output responce of items to pandas df -- 4
-def formatted_df_panda(table):
+def formatted_df_spark(table):
+    spark = get_spark_session()
     output_res_items = get_entries(table)
     formatted_data = [{key:value['S'] for key, value in entry.items()} for entry in output_res_items]
-    df = pd.DataFrame(formatted_data)
+    df = spark.createDataFrame(formatted_data)
     return df
 
 
-# def get_spark_session():
-#     # Import required modules
-#     from pyspark.sql import SparkSession
-#     # from pyspark.sql.functions import *
-#     # from pyspark.sql.types import *
+def get_spark_session():
+    # Import required modules
+    from pyspark.sql import SparkSession
+    from pyspark.sql.functions import col
+    # from pyspark.sql.types import *
 
-#     # Create a SparkSession
-#     spark = SparkSession.builder \
-#         .appName("YourAppName") \
-#         .config("spark.some.config.option", "some-value") \
-#         .getOrCreate()
-        
-#     return spark
+    # Create a SparkSession       
+    return SparkSession.builder \
+        .appName("YourAppName") \
+        .config("spark.some.config.option", "some-value") \
+        .getOrCreate()
 
     
 
@@ -118,3 +118,7 @@ def formatted_df_panda(table):
 #     for table_name in table_names:
 #         print(table_name)
 #     return print("process sucess")
+
+
+
+

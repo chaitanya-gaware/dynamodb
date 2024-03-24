@@ -17,9 +17,9 @@ from lambda_function import *
 #============== getting entries from the table =============
 # -- 5 
 for table in list_table:
-    panda_df = formatted_df_panda(table)
-    print(panda_df)
-    # break;
+    spark_df = formatted_df_spark(table)
+    spark_df.show()
+    break;
 # =================
   
 ## -- 6 convert pandas dataframe to pyspark 
