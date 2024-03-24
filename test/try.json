@@ -1,0 +1,34 @@
+[
+  {
+    "raw_ingestion_status": "Processed",
+    "inhance_injection": "Completed",
+    "source_system": "alfa",
+    "status": "Active",
+    "table_name": "SampleTable1",
+    "file_name_time": "file1_time1"
+  },
+  {
+    "raw_ingestion_status": "Processed",
+    "inhance_injection": "inprogress",
+    "source_system": "alfa",
+    "status": "Active",
+    "table_name": "SampleTable2",
+    "file_name_time": "file2_time2"
+  },
+  {
+    "raw_ingestion_status": "Processed",
+    "inhance_injection": "Fail",
+    "source_system": "alfa",
+    "status": "Active",
+    "table_name": "SampleTable3",
+    "file_name_time": "file3_time3"
+  },
+  {
+    "raw_ingestion_status": "Pending",
+    "inhance_injection": "Fail",
+    "source_system": "alfa",
+    "status": "Active",
+    "table_name": "SampleTable4",
+    "file_name_time": "file3_time4"
+  }
+]
