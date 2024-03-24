@@ -1,0 +1,1 @@
+{"filename": "builds/5096d243b16087b07d58e2b22d83ccec589cb7baf5354927ebf9c34ac57834d3.zip", "runtime": "python3.8", "artifacts_dir": "builds", "build_plan": [["zip", "/home/chaitanya/GIT/project-dynamodb/src/lambda_function.py", null]]}
